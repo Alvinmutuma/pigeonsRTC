@@ -7,7 +7,13 @@ const SMTP_USER = process.env.SMTP_USER || 'apikey';
 const SMTP_PASS = process.env.SMTP_PASS || 'your_sendgrid_api_key';
 const EMAIL_FROM = process.env.EMAIL_FROM || 'noreply@pigeonrtc.com';
 const EMAIL_FROM_NAME = process.env.EMAIL_FROM_NAME || 'PigeonRTC';
-const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
+let effectiveFrontendUrl = process.env.FRONTEND_URL;
+
+if (NODE_ENV === 'production' && effectiveFrontendUrl && !effectiveFrontendUrl.startsWith('http')) {
+  effectiveFrontendUrl = `https://${effectiveFrontendUrl}`;
+} else if (!effectiveFrontendUrl) {
+  effectiveFrontendUrl = 'http://localhost:3000'; // Default for local if not set, or if FRONTEND_URL is somehow empty in dev
+}
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Create a transporter
@@ -111,7 +117,7 @@ const sendEmail = async (options) => {
  * @returns {Promise<Object>} - Nodemailer info object
  */
 const sendVerificationEmail = async (user, token) => {
-  const verificationUrl = `${FRONTEND_URL}/verify-email/${token}`;
+  const verificationUrl = `${effectiveFrontendUrl}/verify-email/${token}`;
   
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -152,7 +158,7 @@ const sendVerificationEmail = async (user, token) => {
  * @returns {Promise<Object>} - Nodemailer info object
  */
 const sendPasswordResetEmail = async (user, token) => {
-  const resetUrl = `${FRONTEND_URL}/reset-password/${token}`;
+  const resetUrl = `${effectiveFrontendUrl}/reset-password/${token}`;
   
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
