@@ -12,10 +12,7 @@ services:
       - key: PORT
         value: 5000
       - key: FRONTEND_URL
-        fromService:
-          name: pigeonrtc-web
-          type: web
-          property: url
+        sync: false # Set manually in Render dashboard to pigeonrtc-web's public URL
       - key: JWT_SECRET
         sync: false # This will be set manually for security
       - key: MONGO_URI
@@ -30,11 +27,7 @@ services:
     dockerContext: ./client
     envVars:
       - key: REACT_APP_API_URL
-        fromService:
-          name: pigeonrtc-api
-          type: web
-          property: url
-        value: /graphql # Append the graphql path to the API URL
+        sync: false # Set manually in Render dashboard to pigeonrtc-api's public URL (e.g., https://pigeonrtc-api.onrender.com, React app should append /graphql)
   # Render-managed Redis instance
   - type: redis
     name: pigeonrtc-cache
