@@ -11,7 +11,31 @@ const cors = require('cors');
 // Configuration
 const PORT = process.env.PORT || 4010;
 const JWT_SECRET = process.env.JWT_SECRET;
-const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/ai-agent-marketplace';
+let mongoUri = process.env.MONGODB_URI;
+
+// Determine if running in production
+// Render typically sets NODE_ENV to 'production' by default for Node.js services.
+const isProduction = process.env.NODE_ENV === 'production';
+
+if (isProduction && !mongoUri) {
+  console.error('FATAL ERROR: MONGODB_URI environment variable is not set for the production environment.');
+  console.error('This variable is essential for connecting to your database (e.g., MongoDB Atlas).');
+  console.error('Please ensure MONGODB_URI is correctly configured in your deployment service (e.g., Render dashboard).');
+  process.exit(1); // Exit immediately if MONGODB_URI is missing in production
+}
+
+// Fallback to localhost for non-production environments if MONGODB_URI is not set
+if (!mongoUri) {
+  console.warn('WARNING: MONGODB_URI is not set. Falling back to local MongoDB for development.');
+  mongoUri = 'mongodb://localhost:27017/ai-agent-marketplace';
+}
+
+// Log connection attempt (conditionally masking Atlas URI)
+if (mongoUri.startsWith('mongodb+srv')) {
+  console.log('INFO: Attempting to connect to MongoDB Atlas (credentials hidden).');
+} else {
+  console.log(`INFO: Attempting to connect to MongoDB at ${mongoUri}`);
+}
 const mongooseOptions = {
   // For newer Mongoose versions, these are the defaults
   // useNewUrlParser: true,
@@ -84,6 +108,7 @@ async function startServer() {
       typeDefs,
       resolvers,
       context: serverContext,
+      cache: "bounded", // Address unbounded cache warning for persisted queries
     });
     
     await server.start();
