@@ -18,7 +18,7 @@ services:
           property: url
       - key: JWT_SECRET
         sync: false # This will be set manually for security
-      - key: MONGO_URI
+      - key: MONGODB_URI
         sync: false # Will connect to MongoDB Atlas
 
   # Frontend web client
