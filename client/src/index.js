@@ -18,8 +18,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // import reportWebVitals from './reportWebVitals'; // Optional: for performance measuring
 
 // HTTP connection to the API
+const apiUrl = process.env.REACT_APP_API_URL;
+
+// HTTP connection to the API
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4010/graphql',
+  // Use REACT_APP_API_URL for production/staging, ensure it's just the hostname
+  // For local development, you might have a .env file setting REACT_APP_API_URL to 'localhost:PORT'
+  uri: apiUrl ? `${apiUrl.startsWith('localhost') ? 'http://' : 'https://'}${apiUrl}/graphql` : 'http://localhost:5000/graphql', // Fallback to localhost:5000 if not set
 });
 
 // Error handling link with detailed logging
