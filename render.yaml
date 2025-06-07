@@ -35,11 +35,11 @@ services:
           type: web
           property: url
         value: /graphql # Append the graphql path to the API URL
-
-databases:
-  # MongoDB Atlas will be used instead of a Render managed DB
-  # You can optionally add a Render Redis instance here if needed:
-  - name: pigeonrtc-cache
-    ipAllowList: [] # allow all IPs
+  # Render-managed Redis instance
+  - type: redis
+    name: pigeonrtc-cache
     plan: free
-    type: redis
+    ipAllowList: [] # allow all IPs
+    # maxmemoryPolicy: allkeys-lru # Example: You can set Redis-specific options
+
+
