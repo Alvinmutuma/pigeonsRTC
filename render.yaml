@@ -15,7 +15,7 @@ services:
         fromService:
           type: web
           name: pigeonrtc-web
-          property: url
+          property: host
       - key: JWT_SECRET
         sync: false # This will be set manually for security
       - key: MONGODB_URI
@@ -33,7 +33,7 @@ services:
         fromService:
           type: web
           name: pigeonrtc-api
-          property: url
+          property: host
   # Render-managed Redis instance
   - type: redis
     name: pigeonrtc-cache
