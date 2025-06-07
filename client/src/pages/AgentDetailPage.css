@@ -1,0 +1,217 @@
+.agent-detail-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.agent-header {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.agent-header h1 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 2.5em;
+}
+
+.agent-category-detail {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+.agent-status-detail {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.status-active { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb;}
+.status-pending_approval { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba;}
+.status-inactive { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;}
+.status-rejected { background-color: #e2e3e5; color: #383d41; border: 1px solid #d6d8db;}
+
+.status-rejected {
+  color: #dc3545; /* Red for rejected */
+  border-color: #dc3545;
+}
+
+.edit-agent-button {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-top: 10px; /* Or adjust as needed */
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.edit-agent-button:hover {
+  background-color: #0056b3;
+  color: white; /* Ensure text color remains white on hover */
+}
+
+.agent-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.agent-main-details h2, .agent-sidebar-details h3, .agent-technical-details h2 {
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.agent-main-details ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.agent-main-details p, .agent-main-details li {
+  line-height: 1.6;
+  color: #444;
+}
+
+.sidebar-section {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.sidebar-section p {
+  margin: 5px 0;
+  font-size: 0.95em;
+  color: #333;
+}
+
+.agent-price-detail {
+  font-size: 1.3em !important;
+  font-weight: bold;
+  color: #28a745 !important;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-badge {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.85em;
+}
+
+/* Try Before Buy Styles */
+.try-before-buy-section {
+  margin: 30px 0;
+}
+
+.try-before-buy-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(76, 201, 240, 0.1) 0%, rgba(0, 123, 255, 0.1) 100%);
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid rgba(76, 201, 240, 0.3);
+  margin-bottom: 30px;
+}
+
+.try-before-buy-banner h2 {
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.try-before-buy-banner p {
+  color: #444;
+  margin-bottom: 0;
+}
+
+.try-button {
+  background-color: #4cc9f0;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  margin-left: 20px;
+}
+
+.try-button:hover {
+  background-color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.agent-technical-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.integration-details-section, .sandbox-details-section {
+  margin-bottom: 20px;
+}
+
+.integration-details-section p, .sandbox-details-section p {
+  margin: 8px 0;
+  line-height: 1.5;
+  color: #444;
+}
+
+.integration-details-section code {
+  background-color: #e9ecef;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .agent-content-grid {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+  }
+  .agent-sidebar-details {
+    order: -1; /* Optionally move sidebar to top on mobile */
+  }
+}

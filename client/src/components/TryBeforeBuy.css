@@ -1,0 +1,315 @@
+.try-before-buy {
+  background-color: var(--deep-blue, #16213e);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.try-before-buy-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.try-before-buy-header h2 {
+  font-size: 1.75rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.try-before-buy-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+.try-before-buy-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tab:hover {
+  color: white;
+}
+
+.tab.active {
+  color: var(--neon-cyan, #4cc9f0);
+  border-bottom: 2px solid var(--neon-cyan, #4cc9f0);
+}
+
+.try-before-buy-content {
+  min-height: 400px;
+}
+
+/* Demo Tab Styles */
+.demo-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.input-section, .output-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.input-section h3, .output-section h3 {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.demo-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  height: 200px;
+  padding: 1rem;
+  resize: none;
+  margin-bottom: 1rem;
+}
+
+.demo-input:focus {
+  border-color: var(--neon-cyan, #4cc9f0);
+  outline: none;
+}
+
+.sample-button {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.sample-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.run-button {
+  background-color: var(--neon-cyan, #4cc9f0);
+  border: none;
+  border-radius: 6px;
+  color: var(--midnight-blue, #1a1a2e);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.run-button:hover {
+  background-color: #3db8de;
+}
+
+.run-button:disabled {
+  background-color: rgba(76, 201, 240, 0.5);
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.demo-output {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #4cc9f0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  height: 240px;
+  overflow-y: auto;
+  padding: 1rem;
+  white-space: pre-wrap;
+}
+
+.empty-output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.empty-output svg {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(76, 201, 240, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--neon-cyan, #4cc9f0);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Code Tab Styles */
+.code-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.code-example h3 {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.code-tabs {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.code-tab {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px 4px 0 0;
+}
+
+.code-tab.active {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--neon-cyan, #4cc9f0);
+}
+
+.code-block {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.code-notes {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.code-notes h4 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.code-notes ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.code-notes li {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.code-notes a {
+  color: var(--neon-cyan, #4cc9f0);
+  text-decoration: none;
+}
+
+.code-notes a:hover {
+  text-decoration: underline;
+}
+
+.try-before-buy-footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.try-before-buy-footer p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+.subscribe-button {
+  display: inline-block;
+  background-color: var(--neon-cyan, #4cc9f0);
+  color: var(--midnight-blue, #1a1a2e);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #3db8de;
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .demo-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .try-before-buy {
+    padding: 1.5rem;
+  }
+}

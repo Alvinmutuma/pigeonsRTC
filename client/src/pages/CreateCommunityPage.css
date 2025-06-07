@@ -1,0 +1,84 @@
+.create-community-page-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9; /* Light background for the page */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333; /* Darker text for readability */
+}
+
+.create-community-page-container h1 {
+  text-align: center;
+  color: #2c3e50; /* Dark blue for heading */
+  margin-bottom: 2rem;
+}
+
+.create-community-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.create-community-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.create-community-form input[type=\"text\"],
+.create-community-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+}
+
+.create-community-form input[type=\"text\"]:focus,
+.create-community-form textarea:focus {
+  border-color: #007bff; /* Highlight focus */
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.create-community-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn-submit-community {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #007bff; /* Primary blue */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-submit-community:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.btn-submit-community:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  opacity: 0.7; /* Added opacity for disabled state */
+}
+
+.error-message {
+  color: #d9534f; /* Bootstrap danger color */
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}

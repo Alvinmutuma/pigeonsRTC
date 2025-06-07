@@ -1,0 +1,148 @@
+.post-list-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.post-list-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-list-item-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.post-list-item-title a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.2s ease;
+}
+
+.post-list-item-title a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.post-list-item-meta {
+  font-size: 0.85em;
+  color: #6c757d;
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 15px; /* row-gap column-gap */
+}
+
+.post-list-item-meta span {
+  display: inline-block;
+  /* margin-right: 15px; */ /* Replaced by gap */
+}
+
+.post-list-item-meta a {
+  color: #545b62;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.post-list-item-meta a:hover {
+  color: #343a40;
+  text-decoration: underline;
+}
+
+.post-list-item-tags {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag-badge {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 500;
+  /* text-transform: lowercase; */ /* Optional: if you want tags to be e.g. all lowercase */
+}
+
+.post-list-item-snippet {
+  font-size: 0.95em;
+  color: #495057;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  /* Max 3 lines of text with ellipsis if supported, otherwise JS handles truncation */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1.6em * 3); /* Fallback for max-height if -webkit-line-clamp not supported */
+}
+
+.post-list-item-stats {
+  font-size: 0.9em;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+.post-list-item-stats span {
+  margin-right: 15px;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.btn-upvote {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.btn-upvote:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.btn-upvote:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-upvote span[role="img"] {
+  margin-right: 5px;
+}
+
+.post-list-item-stats .error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-left: 10px;
+}
+
+.btn-read-more {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-read-more:hover {
+  background-color: #0056b3;
+  color: white;
+}

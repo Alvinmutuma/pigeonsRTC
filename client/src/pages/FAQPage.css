@@ -1,0 +1,145 @@
+/* FAQPage.css */
+.faq-page {
+  padding: 40px 20px;
+  background-color: var(--background-color); /* Assuming dark theme variables */
+  color: var(--text-color);
+  min-height: calc(100vh - var(--navbar-height, 70px)); /* Adjust based on your navbar height */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top */
+}
+
+.faq-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--surface-color); /* Slightly lighter than background for cards/sections */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.1); /* Neon cyan subtle glow */
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border-color-light);
+  padding-bottom: 20px;
+}
+
+.faq-header h1 {
+  font-size: 2.8rem;
+  color: var(--primary-accent-color); /* Neon cyan */
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.faq-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  background-color: var(--background-color); /* Darker item background */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.faq-question {
+  font-size: 1.4rem;
+  color: var(--primary-accent-color-light); /* Lighter cyan or white */
+  margin-bottom: 12px;
+  font-weight: 600;
+  cursor: pointer; /* Optional: if you add expand/collapse later */
+}
+
+.faq-answer {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  padding-left: 10px; /* Indent answer slightly */
+  border-left: 3px solid var(--primary-accent-color); /* Accent border */
+}
+
+.faq-contact-prompt {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--background-color); /* Match item background */
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.faq-contact-prompt h2 {
+  font-size: 1.8rem;
+  color: var(--primary-accent-color);
+  margin-bottom: 15px;
+}
+
+.faq-contact-prompt p {
+  font-size: 1rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 25px;
+}
+
+/* Assuming .btn and .btn-primary are globally defined or defined elsewhere */
+/* If not, you might need to add styles for them here or import a general button stylesheet */
+.faq-contact-prompt .btn-primary {
+  background-color: var(--primary-accent-color);
+  color: var(--background-color); /* Dark text on bright button */
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  display: inline-block;
+}
+
+.faq-contact-prompt .btn-primary:hover {
+  background-color: var(--primary-accent-color-dark); /* Slightly darker cyan on hover */
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 20px;
+  }
+
+  .faq-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .faq-question {
+    font-size: 1.2rem;
+  }
+
+  .faq-answer {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-page {
+    padding: 20px 10px;
+  }
+  .faq-header h1 {
+    font-size: 2rem;
+  }
+  .faq-header p {
+    font-size: 1rem;
+  }
+}

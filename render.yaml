@@ -1,0 +1,45 @@
+services:
+  # Backend API service
+  - type: web
+    name: pigeonrtc-api
+    env: docker
+    repo: https://github.com/Alvin-Mutuma/Vibe
+    dockerfilePath: ./server/Dockerfile
+    dockerContext: ./server
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: FRONTEND_URL
+        fromService:
+          name: pigeonrtc-web
+          type: web
+          property: url
+      - key: JWT_SECRET
+        sync: false # This will be set manually for security
+      - key: MONGO_URI
+        sync: false # Will connect to MongoDB Atlas
+
+  # Frontend web client
+  - type: web
+    name: pigeonrtc-web
+    env: docker
+    repo: https://github.com/Alvin-Mutuma/Vibe
+    dockerfilePath: ./client/Dockerfile
+    dockerContext: ./client
+    envVars:
+      - key: REACT_APP_API_URL
+        fromService:
+          name: pigeonrtc-api
+          type: web
+          property: url
+        value: /graphql # Append the graphql path to the API URL
+
+databases:
+  # MongoDB Atlas will be used instead of a Render managed DB
+  # You can optionally add a Render Redis instance here if needed:
+  - name: pigeonrtc-cache
+    ipAllowList: [] # allow all IPs
+    plan: free
+    type: redis

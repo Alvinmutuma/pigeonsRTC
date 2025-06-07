@@ -1,0 +1,96 @@
+.edit-post-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.edit-post-header {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.edit-post-header h2 {
+  font-size: 1.8em;
+  color: #343a40;
+  margin: 0 0 10px 0;
+}
+
+.post-context {
+  font-size: 1em;
+  color: #495057;
+  background-color: #f8f9fa; /* Lighter than category context */
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.post-context strong {
+  color: #28a745; /* A green to differentiate from category blue */
+}
+
+.auth-required-message,
+.error-page {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.auth-required-message h2,
+.error-page h2 {
+  margin-bottom: 15px;
+}
+
+.auth-required-message p,
+.error-page p {
+  font-size: 1.1em;
+  color: #495057;
+  margin-bottom: 20px;
+}
+
+.error-message {
+    color: #721c24; /* Bootstrap danger text color */
+    background-color: #f8d7da; /* Bootstrap danger background color */
+    border: 1px solid #f5c6cb; /* Bootstrap danger border color */
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: inline-block; /* So it doesn't take full width unless intended */
+}
+
+.btn-secondary {
+    display: inline-block;
+    font-weight: 400;
+    color: #6c757d;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .edit-post-container {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .edit-post-header h2 {
+    font-size: 1.6em;
+  }
+}

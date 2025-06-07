@@ -1,0 +1,76 @@
+.category-list-item {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.category-list-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-list-item-header {
+  margin-bottom: 10px;
+}
+
+.category-list-item-title {
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.category-list-item-title a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.category-list-item-title a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.category-list-item-description {
+  font-size: 0.95em;
+  color: #495057;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Allows description to take available space */
+  min-height: 40px; /* Ensures some minimum height */
+}
+
+.category-list-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+  color: #6c757d;
+  border-top: 1px solid #f1f3f5;
+  padding-top: 10px;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.category-stat {
+  margin-right: 15px;
+}
+
+.btn-view-category {
+  padding: 6px 12px;
+  background-color: #6c757d; /* Secondary button color */
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-view-category:hover {
+  background-color: #545b62;
+  color: white;
+}

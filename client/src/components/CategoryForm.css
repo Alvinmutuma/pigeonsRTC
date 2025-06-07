@@ -1,0 +1,83 @@
+.category-form-reusable {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px; /* Keep some margin if it's used standalone or within other containers */
+}
+
+.category-form-reusable h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.category-form-reusable .form-group {
+  margin-bottom: 15px;
+}
+
+.category-form-reusable .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.category-form-reusable .form-group input[type="text"],
+.category-form-reusable .form-group textarea {
+  width: calc(100% - 22px); /* Account for padding and border */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.category-form-reusable .form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.category-form-reusable .form-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+/* Button styles can be shared or defined specifically if needed */
+.category-form-reusable .btn-submit, 
+.category-form-reusable .btn-cancel {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+}
+
+.category-form-reusable .btn-submit {
+  background-color: #28a745;
+  color: white;
+}
+.category-form-reusable .btn-submit:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.category-form-reusable .btn-cancel {
+  background-color: #6c757d;
+  color: white;
+}
+.category-form-reusable .btn-cancel:hover:not(:disabled) {
+  background-color: #5a6268;
+}
+
+.category-form-reusable .btn-submit:disabled, 
+.category-form-reusable .btn-cancel:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.category-form-reusable .error-message {
+  color: #dc3545;
+  margin-top: 10px;
+  font-size: 0.9em;
+}

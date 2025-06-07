@@ -1,0 +1,1040 @@
+/* Global Styles */
+:root {
+  /* New Dark Theme Color Scheme */
+  --brand-midnight-blue: #0A192F;
+  --brand-slate-gray: #112240;      /* For secondary backgrounds, cards */
+  --brand-light-slate: #CCD6F6;    /* Primary text color on dark backgrounds */
+  --brand-lightest-slate: #E6F1FF; /* For highlights or secondary text */
+  --brand-slate-text: #8892B0;     /* For less important text, subtitles */
+  --brand-neon-cyan: #64FFDA;      /* Accent color for CTAs, links, highlights */
+  --brand-white: #FFFFFF;
+  --brand-dark-text: #0A192F;    /* Text color for light backgrounds (e.g., on cyan button) */
+
+  /* Replacing old variables with new theme */
+  --primary: var(--brand-neon-cyan); /* Main accent */
+  --primary-light: #7fffee; /* Lighter cyan */
+  --primary-dark: #4ccfa5;  /* Darker cyan */
+  
+  --secondary: var(--brand-light-slate); /* Used for text or secondary elements */
+  --secondary-light: var(--brand-lightest-slate);
+
+  --accent: var(--brand-neon-cyan); /* Keep accent as neon cyan */
+
+  --success: #2ECC71; /* Keep for now, or choose a theme-aligned green */
+  --warning: #FF9F43; /* Keep for now, or choose a theme-aligned orange */
+  --danger: #FF6B6B;  /* Keep for now, or choose a theme-aligned red */
+
+  --dark: var(--brand-light-slate);    /* Default text on dark bg */
+  --darker: var(--brand-lightest-slate); /* Slightly brighter text for hierarchy */
+  --light: var(--brand-slate-text);    /* Subdued text */
+  --gray: var(--brand-slate-text);
+  --light-gray: var(--brand-slate-gray); /* For borders or subtle backgrounds */
+  --white: var(--brand-midnight-blue); /* Main background color */
+  
+  /* Typography */
+  --font-sans: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  
+  /* Spacing - remains the same, review if needed */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Border Radius - remains the same, review if needed */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-full: 50%;
+  
+  /* Shadows - Adjust for dark theme if needed, current ones might be too dark */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 30px -5px rgba(0, 0, 0, 0.2);
+  
+  /* Transitions - remains the same */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 400ms ease-in-out;
+  
+  /* Layout - remains the same */
+  --header-height: 70px;
+  --footer-height: 300px;
+  --container-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  color: var(--brand-light-slate); /* Default text color */
+  background-color: var(--brand-midnight-blue); /* Main background */
+  overflow-x: hidden;
+}
+
+.container {
+  width: 92%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+  color: var(--brand-lightest-slate); /* Brighter for headings */
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
+  margin-bottom: 1.5rem;
+}
+
+h2.section-title, /* Target specific h2s for section titles */
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 2.5rem; /* More space after section titles */
+  text-align: center;
+  color: var(--brand-lightest-slate);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin-bottom: 1rem;
+  color: var(--brand-light-slate);
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--brand-slate-text); /* Subdued color for paragraphs */
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.8;
+}
+
+.subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  color: var(--brand-slate-text);
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border-radius: var(--border-radius-sm); /* Slightly less rounded */
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  border: 2px solid transparent;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: var(--brand-neon-cyan);
+  color: var(--brand-dark-text);
+  border-color: var(--brand-neon-cyan);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light); /* Lighter cyan */
+  border-color: var(--primary-light);
+  color: var(--brand-dark-text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(100, 255, 218, 0.2);
+}
+
+.btn-secondary {
+  background-color: var(--brand-slate-gray);
+  color: var(--brand-light-slate);
+  border-color: var(--brand-slate-gray);
+}
+
+.btn-secondary:hover {
+  background-color: #233554; /* Slightly lighter slate gray */
+  border-color: #233554;
+  color: var(--brand-lightest-slate);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--brand-neon-cyan);
+  color: var(--brand-neon-cyan);
+}
+
+.btn-outline:hover {
+  background-color: rgba(100, 255, 218, 0.1); /* Subtle cyan background */
+  color: var(--brand-neon-cyan);
+  transform: translateY(-2px);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: calc(var(--header-height) + 3rem) 0 5rem;
+  background-color: var(--brand-midnight-blue); /* Already set by body, but explicit here */
+  text-align: center; /* Center content for a more focused hero */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  /* Removed flex for centered approach, can be re-added if side-by-side illustration is preferred */
+  max-width: 800px; /* Constrain width for better readability */
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  color: var(--brand-lightest-slate);
+}
+
+.hero-text .subtitle { /* Target subtitle within hero specifically */
+  color: var(--brand-slate-text);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  margin-bottom: 3rem;
+}
+
+.hero-illustration {
+  margin-top: 3rem;
+  max-width: 500px; /* Control illustration size */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-illustration img {
+  max-width: 100%;
+  height: auto;
+  /* Optional: add subtle animation or effect if desired */
+}
+
+/* Features Section ('Why Choose PigeonRTC?') */
+.features-section {
+  padding: 6rem 0;
+  background-color: var(--brand-slate-gray); /* Contrast with hero */
+  position: relative;
+  overflow: hidden;
+}
+
+.features-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(100, 255, 218, 0), rgba(100, 255, 218, 0.15), rgba(100, 255, 218, 0));
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.feature-card {
+  background-color: var(--brand-dark-slate);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--brand-slate-gray); /* Subtle border */
+  padding: 2.5rem 2rem;
+  text-align: center; /* For mobile */
+  box-sizing: border-box;
+  height: 100%; /* Equal height cards */
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--brand-neon-cyan);
+}
+
+.feature-icon {
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon img {
+  max-height: 60px; /* Adjust as needed */
+  width: auto;
+  /* Consider filter: invert(1) brightness(1.5) sepia(1) hue-rotate(150deg) saturate(5); for cyan tint if SVGs are single color */
+}
+
+/* Base styles for feature cards */
+.feature-icon {
+  color: var(--brand-neon-cyan);
+  font-size: 3rem;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+.feature-card h3 {
+  color: var(--brand-neon-cyan);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.feature-card p {
+  color: var(--brand-slate-text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (min-width: 769px) {
+  /* Features grid layout for desktop */
+  .features-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .feature-card {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 2rem;
+    height: 100%;
+    background: var(--brand-card-bg, #181d29);
+    border-radius: 1rem;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+  }
+
+  .feature-icon {
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    color: var(--brand-neon-cyan);
+  }
+
+  .feature-card h3,
+  .feature-card p {
+    width: 100%;
+    writing-mode: horizontal-tb;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: left;
+    margin: 0 0 1rem 0;
+  }
+
+  .feature-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--brand-neon-cyan);
+    line-height: 1.4;
+  }
+
+  .feature-card p {
+    margin-bottom: 0;
+    flex-grow: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--brand-slate-text);
+  }
+
+  /* Extra fix: ensure curated marketplace card matches other cards exactly */
+  .curated-marketplace-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 2rem !important;
+    height: 100% !important;
+    background: var(--brand-card-bg, #181d29) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08) !important;
+  }
+  .curated-marketplace-card .feature-icon {
+    align-self: flex-start !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 3rem !important;
+    color: var(--brand-neon-cyan) !important;
+  }
+  .curated-marketplace-card h3,
+  .curated-marketplace-card p {
+    width: 100% !important;
+    writing-mode: horizontal-tb !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    text-align: left !important;
+    margin: 0 0 1rem 0 !important;
+    display: block !important;
+  }
+  .curated-marketplace-card h3 {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    color: var(--brand-neon-cyan) !important;
+    line-height: 1.4 !important;
+  }
+  .curated-marketplace-card p {
+    margin-bottom: 0 !important;
+    flex-grow: 1 !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    color: var(--brand-slate-text) !important;
+  }
+
+
+  /* Global section alignment for desktop */
+  .features-section,
+  .featured-agents-section {
+    text-align: left; /* Align section titles to the left */
+  }
+  
+  /* Section titles and subtitles alignment */
+  .section-title,
+  .section-subtitle {
+    text-align: left;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Feature cards structure and alignment for desktop */
+  .feature-card {
+    display: flex;
+    flex-direction: column; /* Stack icon, title, p vertically */
+    text-align: left;      /* Align text to the left within the card */
+    align-items: flex-start; /* Align children to the start (left) of the cross axis */
+    padding: 2rem;         /* Consistent padding */
+    height: 100%;          /* Ensure cards in a row have same height */
+    box-sizing: border-box;
+  }
+
+  .feature-card h3 {
+    display: block; 
+    margin: 0 0 1rem 0;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    font-weight: 600;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .feature-card p {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 1rem;
+    flex-grow: 1;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  
+    /* Feature card icon alignment for desktop */
+  .feature-icon {
+    margin: 0 0 1.5rem 0; /* Top, Right, Bottom, Left -> effectively left-aligns with bottom margin */
+    align-self: flex-start; /* Align icon to the start of the .feature-card flex container */
+    font-size: 3rem; /* Consistent with base style */
+    color: var(--brand-neon-cyan); /* Consistent with base style */
+    box-sizing: border-box;
+  }
+  
+  /* Text styling for titles within feature cards on desktop */
+  .feature-card h3 {
+    display: block; /* Ensure it takes its own line */
+    width: 100%;    /* Use full available width */
+    text-align: left;
+    writing-mode: horizontal-tb; /* Ensure horizontal text flow */
+    white-space: normal;         /* Allow text to wrap */
+    overflow-wrap: break-word;   /* Handle long words */
+    word-break: break-word;      /* More aggressive word breaking if needed */
+    margin: 0 0 1rem 0;          /* Bottom margin for spacing */
+    font-size: 1.4rem;           /* Consistent font size */
+    font-weight: 600;
+    color: var(--brand-neon-cyan); /* Title color */
+    line-height: 1.4;
+    box-sizing: border-box;
+  }
+  
+  /* Text styling for paragraphs within feature cards on desktop */
+  .feature-card p {
+    display: block; /* Ensure it takes its own line */
+    width: 100%;    /* Use full available width */
+    text-align: left;
+    writing-mode: horizontal-tb; /* Ensure horizontal text flow */
+    white-space: normal;         /* Allow text to wrap */
+    overflow-wrap: break-word;   /* Handle long words */
+    word-break: break-word;      /* More aggressive word breaking if needed */
+    margin: 0;                   /* No margin if it's the last element */
+    flex-grow: 1;                /* Allow paragraph to take remaining vertical space */
+    font-size: 1rem;             /* Consistent font size for readability */
+    line-height: 1.6;
+    color: var(--brand-slate-text); /* Paragraph text color */
+    box-sizing: border-box;
+  }
+  
+  /* Enhanced Agent cards alignment and styling */
+  .agents-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin: 2.5rem 0;
+  }
+  
+  .agent-card-wrapper {
+    display: flex;
+    height: 100%;
+  }
+  
+  .agent-card {
+    background: var(--brand-slate-gray);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(100, 255, 218, 0.05);
+  }
+  
+  .agent-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+  }
+  
+  .agent-card-content {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  
+  .agent-card h3 {
+    text-align: left;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: var(--brand-neon-cyan);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  
+  .agent-description {
+    text-align: left;
+    line-height: 1.6;
+    color: var(--brand-light-slate);
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .agent-tags {
+    text-align: left;
+    margin: 1.25rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tag {
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--brand-neon-cyan);
+    padding: 0.35rem 0.8rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  
+  .agent-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+  }
+  
+  .developer {
+    color: var(--brand-slate-text);
+    font-size: 0.9rem;
+  }
+  
+  .price-container {
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .price-amount {
+    color: var(--brand-neon-cyan);
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .price-frequency {
+    color: var(--brand-slate-text);
+    font-size: 0.9rem;
+    margin-left: 0.25rem;
+  }
+  
+  .price-free {
+    color: var(--brand-neon-cyan);
+    font-weight: 500;
+  }
+
+  .agents-grid {
+    margin-bottom: 1.5rem; /* Added spacing for desktop views */
+  }
+}
+
+@media (min-width: 1200px) {
+  .features-grid,
+  .agents-grid { /* Add agents-grid here */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Targeted fix for Curated Marketplace heading */
+.curated-marketplace-card h3 {
+  /* Reset everything that could cause vertical stacking */
+  display: block !important;
+  position: static !important;
+  float: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  word-break: normal !important;
+  text-align: left !important;
+  transform: none !important;
+  letter-spacing: normal !important;
+  direction: ltr !important;
+  text-indent: 0 !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Featured Agents Section */
+.featured-agents-section {
+  padding: 6rem 0;
+  background-color: var(--brand-midnight-blue);
+}
+
+.featured-agents-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(100, 255, 218, 0), rgba(100, 255, 218, 0.15), rgba(100, 255, 218, 0));
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.agent-card {
+  background: var(--brand-slate-gray);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  border: 1px solid #233554; /* Subtle border */
+  display: flex;
+  flex-direction: column;
+  text-decoration: none; /* Remove underline from Link component */
+}
+
+.agent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-neon-cyan);
+}
+
+.agent-card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-card h3 {
+  color: var(--brand-lightest-slate);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.agent-demo-indicator {
+  color: var(--warning, #FF9F43);
+  font-size: 0.75em;
+  margin-left: 8px;
+  font-weight: bold;
+  border: 1px solid var(--warning, #FF9F43);
+  padding: 2px 6px;
+  border-radius: var(--border-radius-sm);
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.agent-description {
+  color: var(--brand-slate-text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  /* 3-line clamp with ellipsis */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: calc(0.9rem * 1.6 * 3); /* approx 3 lines height */
+}
+
+.agent-tags {
+  margin-bottom: 1rem;
+}
+
+.agent-tags .tag {
+  background-color: #233554; /* Darker slate for tags */
+  color: var(--brand-neon-cyan);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.agent-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #233554;
+  margin-top: auto; /* Pushes footer to bottom */
+}
+
+.developer {
+  font-size: 0.85rem;
+  color: var(--brand-slate-text);
+}
+
+.price-container {
+  text-align: right;
+}
+
+.price-amount {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brand-neon-cyan);
+}
+
+.price-frequency {
+  font-size: 0.75rem;
+  color: var(--brand-slate-text);
+  margin-left: 0.25rem;
+}
+
+.price-free {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brand-neon-cyan);
+}
+
+/* CTA Section (general one, not hero) */
+.cta-section {
+  padding: 6rem 0;
+  background-color: var(--brand-slate-gray);
+  text-align: center;
+}
+
+.cta-section h2 {
+  color: var(--brand-lightest-slate);
+}
+
+.cta-section p {
+  color: var(--brand-slate-text);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Roadmap Section ('What's Coming Next') */
+.roadmap-section {
+  padding: 6rem 0;
+  background-color: var(--brand-midnight-blue);
+}
+
+.roadmap-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(100, 255, 218, 0), rgba(100, 255, 218, 0.15), rgba(100, 255, 218, 0));
+}
+
+.roadmap-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding: 0 1rem; /* Add some padding for smaller screens */
+}
+
+.roadmap-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px; /* Align to the left for a single-sided timeline */
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--brand-slate-gray);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 50px; /* Space for marker and line */
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 0px; /* Align with the top of the content */
+  left: 10px; /* Position on the line */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--brand-neon-cyan);
+  border: 3px solid var(--brand-midnight-blue);
+  box-shadow: 0 0 0 3px var(--brand-neon-cyan);
+  z-index: 1;
+}
+
+.timeline-content {
+  position: relative;
+  padding: 1.5rem;
+  background: var(--brand-dark-slate); /* Changed for better contrast */
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--brand-slate-gray); /* Border will now be lighter than card bg */
+}
+
+.timeline-item h3 {
+  color: var(--brand-neon-cyan);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.timeline-item p {
+  color: var(--brand-light-slate);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.section-title {
+  color: var(--brand-lightest-slate);
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--brand-neon-cyan);
+  border-radius: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-content {
+    /* Revert to column if illustration is present and needs stacking */
+    /* flex-direction: column; */ 
+    text-align: center;
+  }
+
+  .features-grid,
+  .agents-grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+
+  .roadmap-timeline::before {
+    left: 20px; /* Keep consistent for mobile */
+  }
+
+  .timeline-item {
+    padding-left: 45px; /* Adjust padding */
+  }
+
+  .timeline-marker {
+    left: 12px; /* Adjust marker position */
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .hero-section {
+    padding: 3rem 0;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Mobile Specific Enhancements for HomePage - Featured Agents Button & Roadmap Details */
+@media (max-width: 768px) {
+  .featured-agents-section .cta-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+  }
+
+  .cta-container .btn {
+    min-width: 180px;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    border-radius: 4px;
+    border: 1px solid var(--brand-neon-cyan);
+  }
+
+  .cta-container .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    background-color: rgba(100, 255, 218, 0.1);
+  }
+
+  /* Roadmap specific mobile adjustments (overriding or complementing existing .roadmap-timeline mobile styles if needed) */
+  .roadmap-timeline {
+    position: relative; 
+    padding-left: 0; 
+  }
+
+  .roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px; 
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--brand-neon-cyan);
+    display: none; /* Explicitly set to none, can be changed to block if a central line is desired */
+  }
+
+  .roadmap-timeline .timeline-item {
+    margin-left: 0; 
+    padding-left: 35px; /* Space for icon/marker or general alignment */
+    margin-bottom: 25px; 
+    position: relative; 
+  }
+  
+  .roadmap-timeline .timeline-item .timeline-marker {
+    position: absolute; 
+    left: 10px; 
+    top: 5px; 
+    width: 15px;
+    height: 15px;
+    background-color: var(--brand-neon-cyan); 
+    border-radius: 50%;
+  }
+
+  .roadmap-timeline .timeline-content h3 {
+    color: var(--brand-neon-cyan); 
+    font-size: 1.2rem; 
+    margin-bottom: 0.4em;
+  }
+
+  .roadmap-timeline .timeline-content p {
+    font-size: 0.95rem; 
+    line-height: 1.6;
+    color: var(--brand-light-slate); 
+  }
+  
+  .roadmap-section .section-title,
+  .roadmap-section .section-subtitle {
+    text-align: center; 
+  }
+
+  .roadmap-section .section-subtitle {
+    margin-bottom: 2rem; 
+  }
+}

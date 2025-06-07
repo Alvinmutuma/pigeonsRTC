@@ -1,0 +1,59 @@
+.posts-by-tag-page {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.posts-by-tag-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.posts-by-tag-page .page-header h1 {
+  font-size: 1.8em;
+  color: #333;
+  margin: 0;
+}
+
+.posts-by-tag-page .back-link {
+  font-size: 0.9em;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.posts-by-tag-page .back-link:hover {
+  text-decoration: underline;
+}
+
+.posts-by-tag-page .post-list {
+  margin-bottom: 20px;
+}
+
+.posts-by-tag-page .pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.posts-by-tag-page .pagination-controls button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.posts-by-tag-page .pagination-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.posts-by-tag-page .pagination-controls span {
+  font-size: 0.9em;
+}

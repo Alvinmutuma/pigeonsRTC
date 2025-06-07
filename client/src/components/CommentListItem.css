@@ -1,0 +1,111 @@
+.comment-list-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.comment-author {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.comment-author a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.comment-author a:hover {
+  text-decoration: underline;
+}
+
+.comment-content p {
+  margin: 0 0 10px 0;
+  line-height: 1.6;
+  color: #555;
+  white-space: pre-wrap; /* Preserve line breaks and spaces */
+}
+
+.comment-date {
+  font-size: 0.85em;
+  color: #777;
+  text-align: right;
+}
+
+.comment-author-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.comment-author-username {
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+
+.comment-author-username:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+.comment-content {
+  font-size: 0.95em;
+  color: #343a40;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  white-space: pre-wrap; /* Preserve line breaks from textarea */
+}
+
+/* If using dangerouslySetInnerHTML for rich text comments, add styles for .ql-editor here */
+/* .comment-content.ql-editor {
+  padding: 0;
+} */
+
+.comment-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.btn-comment-action {
+  padding: 5px 10px;
+  font-size: 0.8em;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-upvote-comment {
+  background-color: #e7f3ff; /* Light blue */
+  color: #007bff;
+  border-color: #b8d9ff;
+}
+
+.btn-upvote-comment:hover:not(:disabled) {
+  background-color: #cce5ff;
+  border-color: #99caff;
+}
+
+.btn-upvote-comment:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-delete-comment {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+.btn-delete-comment:hover {
+  background-color: #f1b0b7;
+  border-color: #eca0a8;
+}

@@ -1,0 +1,63 @@
+services:
+  # Backend service
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: pigeonrtc-server
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+      - PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/pigeonrtc
+      - JWT_SECRET='aK3$$sD7*gR9!bX2@cV5&bNd#mQ6(wE1)'
+      # Add any other environment variables your app needs here
+    volumes:
+      - ./server:/usr/src/app/server
+      - /usr/src/app/server/node_modules
+    depends_on:
+      - mongo
+    networks:
+      - pigeonrtc-network
+
+  # Frontend service
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: pigeonrtc-client
+    restart: unless-stopped
+    ports:
+      - "3000:80" # Map container port 80 to host port 3000
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000/graphql
+      # Add any other environment variables your React app needs
+    volumes:
+      - ./client:/usr/src/app/client
+      - /usr/src/app/client/node_modules
+    depends_on:
+      - server
+    networks:
+      - pigeonrtc-network
+
+  # Database service
+  mongo:
+    image: mongo:6
+    container_name: pigeonrtc-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - pigeonrtc-network
+
+networks:
+  pigeonrtc-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local

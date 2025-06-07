@@ -1,0 +1,343 @@
+/* Auth Components Shared Styles */
+:root {
+  --midnight-blue: #1a1a2e;
+  --deep-blue: #16213e;
+  --slate-gray: #30475e;
+  --neon-cyan: #4cc9f0;
+  --light-gray: #e2e8f0;
+  --error-red: #e53e3e;
+  --success-green: #38a169;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--midnight-blue);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(76, 201, 240, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(76, 201, 240, 0.05) 0%, transparent 50%);
+  padding: 2rem;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+.auth-card {
+  background-color: var(--deep-blue);
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--neon-cyan), #8a2be2);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+}
+
+.auth-title {
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  color: var(--light-gray);
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-input {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.3);
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-input.error {
+  border-color: var(--error-red);
+}
+
+.error-message {
+  color: var(--error-red);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.password-toggle:hover {
+  color: white;
+}
+
+.btn-auth {
+  background-color: var(--neon-cyan);
+  border: none;
+  border-radius: 6px;
+  color: var(--midnight-blue);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.btn-auth:hover {
+  background-color: #3db8de;
+}
+
+.btn-auth:active {
+  transform: translateY(1px);
+}
+
+.btn-auth:disabled {
+  background-color: rgba(76, 201, 240, 0.5);
+  cursor: not-allowed;
+}
+
+.btn-auth-outline {
+  background: transparent;
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+}
+
+.btn-auth-outline:hover {
+  background-color: rgba(76, 201, 240, 0.1);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--light-gray);
+  font-size: 0.9rem;
+}
+
+.auth-link {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.auth-link:hover {
+  color: #3db8de;
+  text-decoration: underline;
+}
+
+.role-selector {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.role-option {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.role-option:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.role-option.selected {
+  border-color: var(--neon-cyan);
+  background-color: rgba(76, 201, 240, 0.1);
+}
+
+.role-option-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--neon-cyan);
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.alert-icon {
+  font-size: 1.25rem;
+  margin-top: 0.1rem;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-message {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.alert-error {
+  background-color: rgba(229, 62, 62, 0.1);
+  border-left: 4px solid var(--error-red);
+  color: var(--error-red);
+}
+
+.alert-success {
+  background-color: rgba(56, 161, 105, 0.1);
+  border-left: 4px solid var(--success-green);
+  color: var(--success-green);
+}
+
+.alert-info {
+  background-color: rgba(76, 201, 240, 0.1);
+  border-left: 4px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+}
+
+.password-strength {
+  height: 4px;
+  border-radius: 2px;
+  margin-top: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.password-strength-bar {
+  height: 100%;
+  width: 0;
+  transition: width 0.3s, background-color 0.3s;
+}
+
+.password-strength-text {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  text-align: right;
+}
+
+.strength-weak {
+  width: 25%;
+  background-color: #e53e3e;
+}
+
+.strength-fair {
+  width: 50%;
+  background-color: #ed8936;
+}
+
+.strength-good {
+  width: 75%;
+  background-color: #ecc94b;
+}
+
+.strength-strong {
+  width: 100%;
+  background-color: #38a169;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 1.5rem;
+  }
+  
+  .role-selector {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

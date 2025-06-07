@@ -1,0 +1,108 @@
+/* MyAgentsPage.css */
+.my-agents-page {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.my-agents-page h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.my-agents-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.my-agent-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.my-agent-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.my-agent-card h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.my-agent-card .status {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.status-pending_approval { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+.status-active { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.status-inactive { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;}
+.status-rejected { background-color: #e2e3e5; color: #383d41; border: 1px solid #d6d8db;}
+
+
+.my-agent-card p {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.my-agent-card .tags-container {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.my-agent-card .tag {
+  display: inline-block;
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 0.8em;
+}
+
+.my-agent-card .card-actions {
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  display: flex;
+  gap: 10px; /* Spacing between buttons */
+}
+
+.my-agent-card .action-link {
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.action-link.view-link {
+  background-color: #6c757d;
+  color: white;
+}
+.action-link.view-link:hover {
+  background-color: #5a6268;
+}
+
+.action-link.edit-link {
+  background-color: #007bff;
+  color: white;
+}
+.action-link.edit-link:hover {
+  background-color: #0056b3;
+}
+

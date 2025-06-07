@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" fill="#f0f0f0" rx="10" ry="10"/>
+  <g transform="translate(20 20) scale(0.6)">
+    <path fill="#36C5F0" d="M29.96 50.04c0 2.76-2.24 5-5 5s-5-2.24-5-5V30h5c2.76 0 5 2.24 5 5v15.04z"/>
+    <path fill="#2EB67D" d="M30 29.96c-2.76 0-5-2.24-5-5s2.24-5 5-5h19.92c2.76 0 5 2.24 5 5s-2.24 5-5 5H30z"/>
+    <path fill="#ECB22E" d="M69.96 30c0-2.76 2.24-5 5-5s5 2.24 5 5v19.92c0 2.76-2.24 5-5 5s-5-2.24-5-5V30z"/>
+    <path fill="#E01E5A" d="M70 69.96c2.76 0 5 2.24 5 5s-2.24 5-5 5H50.04c-2.76 0-5-2.24-5-5s2.24-5 5-5H70z"/>
+  </g>
+  <text x="50" y="90" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle">Slack Placeholder</text>
+</svg>

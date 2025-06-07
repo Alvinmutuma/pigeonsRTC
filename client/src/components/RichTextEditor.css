@@ -1,0 +1,90 @@
+.rich-text-editor-container {
+  margin-bottom: 20px; /* Match form-group margin */
+  position: relative; /* For potential future absolute positioned elements like custom toolbars */
+}
+
+/* Styling the Quill editor itself */
+.rich-text-editor-container .ql-toolbar.ql-snow {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border: 1px solid #ccc;
+  border-bottom: 0; /* The container will have the bottom border */
+  background-color: #f8f9fa; /* Light background for toolbar */
+}
+
+.rich-text-editor-container .ql-container.ql-snow {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: 1px solid #ccc;
+  min-height: 200px; /* Default minimum height */
+  font-size: 1em; /* Match other form inputs */
+  background-color: #fff;
+}
+
+.rich-text-editor-container .ql-editor {
+  min-height: 200px; /* Ensure editor area has a good default height */
+  padding: 12px; /* Match other input padding */
+}
+
+.rich-text-editor-container .ql-editor.ql-blank::before {
+  color: #999; /* Placeholder text color */
+  font-style: normal; /* Override Quill's italic placeholder */
+  left: 12px; /* Align with padding */
+  right: 12px;
+}
+
+/* Focus state - apply to the container or specific elements */
+.rich-text-editor-container .ql-container.ql-snow:focus-within {
+  border-color: #007bff;
+  /* box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); */ /* Optional: if you want a shadow like other inputs */
+}
+
+/* Read-only state */
+.rich-text-editor-container.read-only .ql-toolbar.ql-snow {
+  display: none; /* Hide toolbar in read-only mode */
+}
+
+.rich-text-editor-container.read-only .ql-container.ql-snow {
+  border: none; /* Remove border in read-only mode for cleaner display */
+  background-color: transparent;
+}
+
+.rich-text-editor-container.read-only .ql-editor {
+  padding: 0; /* Remove padding for seamless display */
+}
+
+/* Ensure links are clickable and styled appropriately */
+.ql-editor a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Style for images if needed, e.g., max-width */
+.ql-editor img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Prevents extra space below images */
+  margin: 10px 0;
+  border-radius: 4px; /* Optional: slight rounding */
+}
+
+/* Style for blockquotes */
+.ql-editor blockquote {
+  border-left: 4px solid #ccc;
+  margin: 10px 0;
+  padding-left: 16px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Code blocks (if you enable them in toolbar) */
+.ql-syntax {
+  background-color: #f3f3f3;
+  color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto; /* For horizontal scrolling of long code lines */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  margin: 10px 0;
+}

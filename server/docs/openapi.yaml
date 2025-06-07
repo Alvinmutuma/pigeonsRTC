@@ -1,0 +1,198 @@
+openapi: 3.0.0
+info:
+  title: PigeonRTC API
+  description: |
+    # PigeonRTC API Documentation
+    
+    This is the official API documentation for PigeonRTC, an AI Agent Marketplace.
+    
+    ## Authentication
+    Most endpoints require authentication using JWT tokens. Include the token in the `Authorization` header as follows:
+    
+    ```
+    Authorization: Bearer YOUR_JWT_TOKEN
+    ```
+    
+    ## Rate Limiting
+    - Public endpoints: 100 requests per minute per IP
+    - Authenticated endpoints: 1000 requests per minute per user
+    - API Key endpoints: 5000 requests per minute per key
+  version: 1.0.0
+  contact:
+    name: PigeonRTC Support
+    email: support@pigeonrtc.com
+    url: https://pigeonrtc.com/support
+  
+servers:
+  - url: https://api.pigeonrtc.com/v1
+    description: Production server
+  - url: http://localhost:4010/v1
+    description: Development server
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        role:
+          type: string
+          enum: [user, developer, admin]
+        isVerified:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    
+    Agent:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          enum: [draft, pending_approval, approved, rejected]
+        pricing:
+          $ref: '#/components/schemas/AgentPricing'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    
+    AgentPricing:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [free, subscription, pay_as_you_go, enterprise]
+        amount:
+          type: number
+        currency:
+          type: string
+          default: USD
+        details:
+          type: string
+
+security:
+  - bearerAuth: []
+
+paths:
+  /auth/register:
+    post:
+      tags: [Authentication]
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterInput'
+      responses:
+        '201':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+  
+  /auth/login:
+    post:
+      tags: [Authentication]
+      summary: Authenticate user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginInput'
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+
+  /agents:
+    get:
+      tags: [Agents]
+      summary: Get all agents
+      parameters:
+        - $ref: '#/components/parameters/searchTerm'
+        - $ref: '#/components/parameters/category'
+        - $ref: '#/components/parameters/status'
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+      responses:
+        '200':
+          description: List of agents
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Agent'
+
+components:
+  parameters:
+    searchTerm:
+      name: searchTerm
+      in: query
+      description: Search term to filter agents
+      required: false
+      schema:
+        type: string
+    category:
+      name: category
+      in: query
+      description: Filter by category
+      required: false
+      schema:
+        type: string
+    status:
+      name: status
+      in: query
+      description: Filter by status
+      required: false
+      schema:
+        type: string
+        enum: [draft, pending_approval, approved, rejected]
+    limit:
+      name: limit
+      in: query
+      description: Number of items to return
+      required: false
+      schema:
+        type: integer
+        default: 10
+    offset:
+      name: offset
+      in: query
+      description: Number of items to skip
+      required: false
+      schema:
+        type: integer
+        default: 0

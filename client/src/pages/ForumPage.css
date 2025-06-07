@@ -1,0 +1,361 @@
+/* client/src/pages/ForumPage.css */
+
+/* Overall Page Container & Theme */
+.forum-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0D1117; /* Midnight blue/dark gray */
+  color: #C9D1D9; /* Light gray text */
+  font-family: 'Inter', 'Poppins', sans-serif; /* As per UI prompt */
+}
+
+/* Sticky Header */
+.forum-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #161B22; /* Slightly lighter dark shade for header */
+  border-bottom: 1px solid #30363D;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.forum-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #58A6FF; /* Neon cyan accent or similar */
+}
+
+.global-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #0D1117;
+  border: 1px solid #30363D;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  width: 40%;
+  max-width: 500px;
+}
+
+.search-icon {
+  margin-right: 0.5rem;
+  color: #8B949E; /* Medium gray for icon */
+}
+
+.global-search-input {
+  background-color: transparent;
+  border: none;
+  color: #C9D1D9;
+  outline: none;
+  width: 100%;
+}
+
+.global-search-input::placeholder {
+  color: #8B949E;
+}
+
+.profile-dropdown-placeholder {
+  /* Placeholder styling */
+  color: #C9D1D9;
+}
+
+/* Main Content Area (3-column layout) */
+.forum-main-content {
+  display: grid;
+  grid-template-columns: 250px 1fr 300px; /* Left sidebar, main feed, right sidebar */
+  gap: 1.5rem; /* Space between columns */
+  padding: 1.5rem;
+  flex-grow: 1;
+  max-width: 1400px; /* Max width for larger screens */
+  margin: 0 auto; /* Center the content */
+  width: 100%;
+}
+
+/* Sidebars */
+.forum-sidebar-left, .forum-sidebar-right {
+  padding: 1rem;
+  background-color: #161B22; /* Consistent sidebar background */
+  border-radius: 8px;
+  height: fit-content; /* So they don't stretch full page height unnecessarily */
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #F0F6FC; /* Brighter text for titles */
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #30363D;
+}
+
+/* Left Sidebar: Categories */
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.category-list-item:hover {
+  background-color: #21262D; /* Hover state for categories */
+}
+
+.category-icon {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.category-name {
+  font-weight: 500;
+}
+
+/* Center Column: Post Feed */
+.forum-post-feed {
+  /* No specific background, inherits from main */
+}
+
+.feed-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.feed-controls .btn-outline {
+  border-color: #58A6FF;
+  color: #58A6FF;
+}
+
+.feed-controls .btn-outline:hover {
+  background-color: rgba(88, 166, 255, 0.1);
+}
+
+/* Post Card */
+.post-card {
+  background-color: #161B22; /* Card background */
+  border: 1px solid #30363D;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); /* Subtle shadow */
+}
+
+.post-card-content {
+  padding: 1.5rem;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.post-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #F0F6FC;
+  margin-bottom: 0.25rem;
+  /* Clicks should be on View Post button or title itself if it's a link */
+}
+
+.post-votes {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #8B949E;
+}
+
+.post-votes button {
+  color: #8B949E;
+}
+.post-votes button:hover {
+  color: #58A6FF;
+}
+
+.post-meta {
+  font-size: 0.875rem;
+  color: #8B949E; /* Medium gray for meta text */
+  margin-bottom: 0.75rem;
+}
+
+.post-meta span:not(:last-child)::after {
+  content: '·';
+  margin: 0 0.5rem;
+}
+
+.post-tags {
+  margin-bottom: 1rem;
+}
+
+.post-tags .badge {
+  margin-right: 0.5rem;
+  background-color: #21262D;
+  color: #C9D1D9;
+  border: 1px solid #30363D;
+}
+
+.view-post-button {
+  background-color: #238636; /* Greenish accent for primary CTA */
+  color: white;
+  border: none;
+}
+
+.view-post-button:hover {
+  background-color: #2DA042;
+}
+
+/* Pagination Bar */
+.pagination-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.page-info {
+  margin: 0 1rem;
+  color: #8B949E;
+}
+
+/* Right Sidebar */
+.create-post-button-main {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #58A6FF; /* Neon cyan accent */
+  color: #0D1117; /* Dark text on light button */
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.create-post-button-main:hover {
+  background-color: #79C0FF;
+}
+
+.sidebar-card {
+  background-color: #161B22;
+  border: 1px solid #30363D;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-card .card-content {
+  padding: 1rem;
+}
+
+.trending-posts-list, .contributors-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.trending-posts-list li, .contributors-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #21262D; /* Subtle separator */
+  display: flex;
+  align-items: center;
+}
+
+.trending-posts-list li:last-child, .contributors-list li:last-child {
+  border-bottom: none;
+}
+
+.contributor-avatar {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #30363D;
+  color: #C9D1D9;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-right: 0.75rem;
+}
+
+.suggested-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.suggested-tags-list .badge {
+  background-color: #21262D;
+  color: #C9D1D9;
+  border: 1px solid #30363D;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .forum-main-content {
+    grid-template-columns: 220px 1fr 280px; /* Slightly smaller sidebars */
+  }
+}
+
+@media (max-width: 992px) {
+  .forum-main-content {
+    grid-template-columns: 1fr; /* Stack columns */
+  }
+  .forum-sidebar-left, .forum-sidebar-right {
+    margin-bottom: 1.5rem; /* Add space when stacked */
+    /* Consider making left sidebar collapsible or a dropdown on mobile */
+  }
+  .forum-sidebar-left {
+    order: -1; /* Optionally move categories to top on mobile if desired */
+  }
+  .global-search-bar {
+    width: auto; /* Allow it to shrink more */
+    flex-grow: 1;
+    margin: 0 1rem;
+  }
+  .forum-logo {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .forum-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+  .forum-logo {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  .global-search-bar {
+    margin: 0.5rem 0;
+  }
+  .profile-dropdown-placeholder {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  .post-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* ShadCN UI Component Overrides/Styling (if needed) */
+/* Example: Ensure Card component fits dark theme */
+/* .card { background-color: #161B22; border: 1px solid #30363D; color: #C9D1D9; } */
+/* .button { /* Default button styles for dark theme */ /* } */
+/* .input { /* Default input styles for dark theme */ /* } */
+

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" fill="#f0f0f0" rx="10" ry="10"/>
+  <path fill="#FF4A00" d="M50,18.8c-17.2,0-31.2,14-31.2,31.2s14,31.2,31.2,31.2s31.2-14,31.2-31.2S67.2,18.8,50,18.8z M50,75 c-13.8,0-25-11.2-25-25s11.2-25,25-25s25,11.2,25,25S63.8,75,50,75z"/>
+  <path fill="#FF4A00" d="M37.5,50l12.5-12.5V50h12.5L50,62.5V50H37.5z"/>
+  <text x="50" y="90" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle">Zapier Placeholder</text>
+</svg>

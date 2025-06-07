@@ -1,0 +1,298 @@
+.settings-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.settings-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 1.8rem;
+  flex-grow: 1;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #4a6cf7;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.back-button:hover {
+  background-color: rgba(74, 108, 247, 0.1);
+}
+
+.settings-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.save-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-button:hover {
+  background-color: #3a56d4;
+}
+
+.save-button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.save-button.success {
+  background-color: #10b981;
+}
+
+.settings-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.settings-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.settings-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.settings-tab:hover {
+  background-color: #f5f5f5;
+}
+
+.settings-tab.active {
+  background-color: #4a6cf7;
+  color: white;
+}
+
+.settings-content {
+  flex-grow: 1;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.settings-description {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.setting-info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #a0a0a0;
+  transition: color 0.2s;
+}
+
+.toggle-button.active {
+  color: #4a6cf7;
+}
+
+.theme-selector {
+  display: flex;
+  gap: 1rem;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.theme-option:hover {
+  background-color: #eee;
+}
+
+.theme-option.selected {
+  background-color: #4a6cf7;
+  color: white;
+  border-color: #4a6cf7;
+}
+
+.select-input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  min-width: 150px;
+}
+
+.setting-action {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.reset-button {
+  padding: 0.6rem 1.2rem;
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.reset-button:hover {
+  background-color: #e04646;
+}
+
+/* Dark theme styles */
+.dark-theme {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+.dark-theme .settings-page {
+  color: #f0f0f0;
+}
+
+.dark-theme .settings-content {
+  background-color: #2a2a2a;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .setting-item {
+  border-bottom-color: #444;
+}
+
+.dark-theme .setting-info p {
+  color: #bbb;
+}
+
+.dark-theme .theme-option {
+  background-color: #333;
+  border-color: #555;
+  color: #f0f0f0;
+}
+
+.dark-theme .theme-option:hover {
+  background-color: #444;
+}
+
+.dark-theme .settings-tab:hover {
+  background-color: #333;
+}
+
+.dark-theme .select-input {
+  background-color: #333;
+  border-color: #555;
+  color: #f0f0f0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .settings-container {
+    flex-direction: column;
+  }
+  
+  .settings-sidebar {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .settings-tab {
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+  
+  .settings-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .settings-actions {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .save-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

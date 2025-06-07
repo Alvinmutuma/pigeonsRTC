@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="80" fill="#F0F2FF"/>
+  
+  <!-- Plug Icon -->
+  <rect x="85" y="40" width="30" height="60" rx="3" fill="#6C63FF"/>
+  <rect x="75" y="90" width="50" height="10" rx="2" fill="#6C63FF"/>
+  <rect x="85" y="100" width="30" height="30" rx="3" fill="#6C63FF"/>
+  
+  <!-- Connection Dots -->
+  <circle cx="70" cy="70" r="4" fill="#6C63FF" fill-opacity="0.3"/>
+  <circle cx="130" cy="70" r="4" fill="#6C63FF" fill-opacity="0.3"/>
+  <circle cx="70" cy="130" r="4" fill="#6C63FF" fill-opacity="0.3"/>
+  <circle cx="130" cy="130" r="4" fill="#6C63FF" fill-opacity="0.3"/>
+  
+  <!-- Connection Lines -->
+  <path d="M85 70L100 70" stroke="#6C63FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+  <path d="M100 70L115 70" stroke="#6C63FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+  <path d="M85 130L100 130" stroke="#6C63FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+  <path d="M100 130L115 130" stroke="#6C63FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+  
+  <!-- Checkmark -->
+  <path d="M75 110L90 125L125 85" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
