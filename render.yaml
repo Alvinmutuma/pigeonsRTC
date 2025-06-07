@@ -3,7 +3,7 @@ services:
   - type: web
     name: pigeonrtc-api
     env: docker
-    repo: https://github.com/Alvin-Mutuma/Vibe
+    repo: https://github.com/Alvinmutuma/pigeonsRTC
     dockerfilePath: ./server/Dockerfile
     dockerContext: ./server
     envVars:
@@ -25,7 +25,7 @@ services:
   - type: web
     name: pigeonrtc-web
     env: docker
-    repo: https://github.com/Alvin-Mutuma/Vibe
+    repo: https://github.com/Alvinmutuma/pigeonsRTC
     dockerfilePath: ./client/Dockerfile
     dockerContext: ./client
     envVars:
