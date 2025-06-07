@@ -7,6 +7,7 @@ const SMTP_USER = process.env.SMTP_USER || 'apikey';
 const SMTP_PASS = process.env.SMTP_PASS || 'your_sendgrid_api_key';
 const EMAIL_FROM = process.env.EMAIL_FROM || 'noreply@pigeonrtc.com';
 const EMAIL_FROM_NAME = process.env.EMAIL_FROM_NAME || 'PigeonRTC';
+const NODE_ENV = process.env.NODE_ENV || 'development';
 let effectiveFrontendUrl = process.env.FRONTEND_URL;
 
 if (NODE_ENV === 'production' && effectiveFrontendUrl && !effectiveFrontendUrl.startsWith('http')) {
@@ -14,7 +15,6 @@ if (NODE_ENV === 'production' && effectiveFrontendUrl && !effectiveFrontendUrl.s
 } else if (!effectiveFrontendUrl) {
   effectiveFrontendUrl = 'http://localhost:3000'; // Default for local if not set, or if FRONTEND_URL is somehow empty in dev
 }
-const NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Create a transporter
 let transporter;
