@@ -33,7 +33,7 @@ yarn-error.log*
 
 # Docker
 **/.dockerignore
-**/Dockerfile
+#**/Dockerfile
 
 # Keep docker-compose.yml in version control
 # docker-compose.yml
